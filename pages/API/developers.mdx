@@ -1,0 +1,109 @@
+# Developer API Routes
+
+In this document, you will find a list of API endpoints and their descriptions for our developer API.
+
+## List Developers
+
+### `GET /devs`
+
+- **Description:** This endpoint allows you to retrieve a list of all developers.
+- **Usage:** Send a GET request to `/devs` to retrieve the list of developers.
+
+**Example:**
+
+```js filename="demo.js" {3} copy
+fetch('https://jsonify.com/devs')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
+## Add Developer
+
+### `POST /devs`
+
+- **Description:** Use this endpoint to add a new developer to the database. **(Mock Action)**
+- **Usage:** Send a POST request to `/devs` with the developer's information in the request body to add a new developer.
+  **Example:**
+
+```js filename="demo.js" {3} copy
+const newDev = {
+  name: 'John Doe',
+  email: 'johndoe@example.com',
+  avatarUrl: 'https://example.com/avatar.jpg',
+  description: 'Experienced JavaScript developer',
+  location: 'New York',
+  skills: ['JavaScript', 'React'],
+  experience: 5,
+  githubProfile: 'https://github.com/johndoe',
+};
+
+fetch('https://jsonify.com/devs', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(newDev),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
+## Find Developer by ID
+
+### `GET /devs/:id`
+
+- **Description:** Retrieve a developer's information by their unique ID.
+- **Usage:** Send a GET request to `/devs/:id` where `:id` is the unique identifier of the developer you want to retrieve.
+
+Replace `:id` with the actual ID of the developer you want to retrieve.
+
+**Example:**
+
+```js filename="demo.js" {3} copy
+fetch('https://jsonify.com/123') // Replace '123' with the desired developer's ID
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
+## Edit Developer
+
+### `PUT /devs/:id` or `PATCH /devs/:id`
+
+- **Description:** Modify a developer's information by their unique ID. You can use either PUT or PATCH based on your requirements. **(Mock Action)**
+- **Usage:** Send a PUT or PATCH request to `/devs/:id` to update the developer's information. Include the desired changes in the request body.
+
+**Example:**
+
+```js filename="demo.js" {3} copy
+const updatedDev = {
+  name: 'Updated Name',
+  skills: ['JavaScript', 'React', 'Node.js'],
+};
+
+fetch('https://jsonify.com/123', {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(updatedDev),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
+## Delete Developer
+
+### `DELETE /devs/:id`
+
+- **Description:** Delete a developer from the database using their unique ID. **(Mock Action)**
+- **Usage:** Send a DELETE request to `/devs/:id` to remove the developer with the specified ID from the database.
+
+**Example:**
+
+```js filename="demo.js" {3} copy
+fetch('https://jsonify.com/123') // Replace '123' with the desired developer's ID
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
+That's a brief overview of our developer API endpoints and their functionalities. Feel free to explore and interact with these endpoints.

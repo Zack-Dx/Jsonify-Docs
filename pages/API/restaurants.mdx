@@ -1,0 +1,134 @@
+# Restaurant API Routes
+
+In this document, you will find a list of API endpoints and their descriptions for our restaurant API.
+
+## List Restaurants
+
+### `GET /restros`
+
+- **Description:** This endpoint allows you to retrieve a list of all restaurants.
+- **Usage:** Send a GET request to `/restros` to retrieve the list of restaurants.
+
+**Example:**
+
+```js filename="demo.js" {3} copy
+fetch('https://jsonify.com/restros')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
+## Add Restaurant
+
+### `POST /restros`
+
+- **Description:** Use this endpoint to add a new restaurant to the database. **(Mock Action)**
+- **Usage:** Send a POST request to /restros with the restaurant's information in the request body to add a new restaurant.
+
+  **Example:**
+
+```js filename="demo.js" {3} copy
+const newRestaurant = {
+  info: {
+    id: '123456',
+    name: 'The Food Haven',
+    imageUrl: 'https://example.com/foodhaven.jpg',
+    locality: 'Downtown',
+    areaName: 'Cityville',
+    cuisines: ['Italian', 'Mexican'],
+    avgRating: 4.5,
+    veg: true,
+    deliveryTime: 30,
+    isOpen: true,
+  },
+  menu: [], // Add menu items as needed
+};
+
+fetch('https://jsonify.com/restros', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(newRestaurant),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
+## Find Restaurant by ID
+
+### `GET /restros/:id`
+
+- **Description:** Retrieve a restaurant's information by its unique ID.
+- **Usage:** Send a GET request to /restros/:id where :id is the unique identifier of the restaurant you want to retrieve.
+
+Replace `:id` with the actual ID of the restaurant you want to retrieve.
+
+**Example:**
+
+```js filename="demo.js" {3} copy
+fetch('https://jsonify.com/restros/123456') // Replace '123456' with the desired restaurant's ID
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
+## Edit Restaurant
+
+### `PUT /restros/:id` or `PATCH /restros/:id`
+
+- **Description:** Modify a restaurant's information by its unique ID. You can use either PUT or PATCH based on your requirements. **(Mock Action)**
+- **Usage:** Send a PUT or PATCH request to /restros/:id to update the restaurant's information. Include the desired changes in the request body.
+
+**Example:**
+
+```js filename="demo.js" {3} copy
+const updatedRestaurant = {
+  info: {
+    name: 'Updated Food Haven',
+    avgRating: 4.8,
+  },
+  menu: [], // Add updated menu items as needed
+};
+
+fetch('https://jsonify.com/restros/123456', {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(updatedRestaurant),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+const updatedRating = {
+  info: {
+    avgRating: 4.8,
+  },
+};
+
+fetch('https://jsonify.com/restros/123456', {
+  method: 'PATCH',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(updatedRating),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
+## Delete Restaurant
+
+### `DELETE /restros/:id`
+
+- **Description:** Delete a restaurant from the database using its unique ID. **(Mock Action)**
+- **Usage:** Send a DELETE request to /restros/:id to remove the restaurant with the specified ID from the database.
+
+**Example:**
+
+```js filename="demo.js" {3} copy
+fetch('https://jsonify.com/restros/123456') // Replace '123456' with the desired restaurant's ID
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
+That's a brief overview of our restaurant API endpoints and their functionalities. Feel free to explore and interact with these endpoints.
