@@ -12,7 +12,7 @@ In this document, you will find a list of API endpoints and their descriptions f
 **Example:**
 
 ```js filename="demo.js" {3} copy
-fetch('https://jsonify.com/devs')
+fetch('https://jsonifyyy.com/devs')
   .then((response) => response.json())
   .then((data) => console.log(data));
 ```
@@ -37,7 +37,7 @@ const newDev = {
   githubProfile: 'https://github.com/johndoe',
 };
 
-fetch('https://jsonify.com/devs', {
+fetch('https://jsonifyyy.com/devs', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ Replace `:id` with the actual ID of the developer you want to retrieve.
 **Example:**
 
 ```js filename="demo.js" {3} copy
-fetch('https://jsonify.com/123') // Replace '123' with the desired developer's ID
+fetch('https://jsonifyyy.com/123') // Replace '123' with the desired developer's ID
   .then((response) => response.json())
   .then((data) => console.log(data));
 ```
@@ -80,7 +80,7 @@ const updatedDev = {
   skills: ['JavaScript', 'React', 'Node.js'],
 };
 
-fetch('https://jsonify.com/123', {
+fetch('https://jsonifyyy.com/123', {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ fetch('https://jsonify.com/123', {
 **Example:**
 
 ```js filename="demo.js" {3} copy
-fetch('https://jsonify.com/123') // Replace '123' with the desired developer's ID
+fetch('https://jsonifyyy.com/123') // Replace '123' with the desired developer's ID
   .then((response) => response.json())
   .then((data) => console.log(data));
 ```

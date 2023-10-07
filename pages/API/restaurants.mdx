@@ -12,7 +12,7 @@ In this document, you will find a list of API endpoints and their descriptions f
 **Example:**
 
 ```js filename="demo.js" {3} copy
-fetch('https://jsonify.com/restros')
+fetch('https://jsonifyyy.com/restros')
   .then((response) => response.json())
   .then((data) => console.log(data));
 ```
@@ -43,7 +43,7 @@ const newRestaurant = {
   menu: [], // Add menu items as needed
 };
 
-fetch('https://jsonify.com/restros', {
+fetch('https://jsonifyyy.com/restros', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ Replace `:id` with the actual ID of the restaurant you want to retrieve.
 **Example:**
 
 ```js filename="demo.js" {3} copy
-fetch('https://jsonify.com/restros/123456') // Replace '123456' with the desired restaurant's ID
+fetch('https://jsonifyyy.com/restros/123456') // Replace '123456' with the desired restaurant's ID
   .then((response) => response.json())
   .then((data) => console.log(data));
 ```
@@ -89,7 +89,7 @@ const updatedRestaurant = {
   menu: [], // Add updated menu items as needed
 };
 
-fetch('https://jsonify.com/restros/123456', {
+fetch('https://jsonifyyy.com/restros/123456', {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json',
@@ -105,7 +105,7 @@ const updatedRating = {
   },
 };
 
-fetch('https://jsonify.com/restros/123456', {
+fetch('https://jsonifyyy.com/restros/123456', {
   method: 'PATCH',
   headers: {
     'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ fetch('https://jsonify.com/restros/123456', {
 **Example:**
 
 ```js filename="demo.js" {3} copy
-fetch('https://jsonify.com/restros/123456') // Replace '123456' with the desired restaurant's ID
+fetch('https://jsonifyyy.com/restros/123456') // Replace '123456' with the desired restaurant's ID
   .then((response) => response.json())
   .then((data) => console.log(data));
 ```
