@@ -29,7 +29,6 @@ fetch('https://jsonifyyy.com/restros')
 ```js filename="demo.js" {3} copy
 const newRestaurant = {
   info: {
-    id: '123456',
     name: 'The Food Haven',
     imageUrl: 'https://example.com/foodhaven.jpg',
     locality: 'Downtown',
@@ -40,7 +39,16 @@ const newRestaurant = {
     deliveryTime: 30,
     isOpen: true,
   },
-  menu: [], // Add menu items as needed
+  menu: [
+    {
+      name: 'Margherita Pizza',
+      category: 'Pizza',
+      description: 'Classic tomato and mozzarella cheese pizza',
+      imageUrl: 'https://example.com/pizza.jpg',
+      isVeg: true,
+      price: 10.99,
+    },
+  ], // Add menu items as needed
 };
 
 fetch('https://jsonifyyy.com/restros', {
