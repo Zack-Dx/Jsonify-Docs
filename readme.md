@@ -1,4 +1,4 @@
-\***\*Jsonify API**
+**Jsonify API**
 
 You can access the code for the Jsonify API [here](https://github.com/Zack-Dx/Jsonify-RestAPI). This API simplifies data encoding and decoding to and from JSON format, making it easier to work with JSON data.
 
